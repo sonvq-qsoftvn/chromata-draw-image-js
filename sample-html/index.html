@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html ng-controller="AppController as vm">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learn something new every day!</title>
+
+</head>
+<body>
+
+<img class="my-image" src="test4.png" style="visibility:hidden;"></img>
+<!-- inject:js -->
+<script src="chromata.min.js"></script>
+<!-- endinject -->
+<script>
+	// default options
+        var defaults ={
+			colorMode: "greyscale",
+			key: "high",
+			lineMode: "square",
+			lineWidth: 1,
+			origin: ["35% 40%", "50% 40%", "40% 50%", "40% 55%", "60% 20%", "25% 25%", "60% 55%", "40% 55%"],
+			pathFinderCount: 100,
+			speed: 2,
+			turningAngle: Math.PI / 2
+		};
+	var imageElement = document.querySelector('.my-image');
+	var chromata = new Chromata(imageElement, defaults);
+	chromata.start();
+</script>
+</body>
+</html>
